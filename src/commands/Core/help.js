@@ -177,6 +177,13 @@ export async function createInitialHelpMenu(client) {
         .setURL("https://www.youtube.com/@TouchDisc")
         .setStyle(ButtonStyle.Link);
 
+    // Add a download button linking to a zip of the repository so users can download the source code
+    const downloadZipUrl = "https://github.com/doragedad-web/SALTY/archive/refs/heads/main.zip";
+    const downloadButton = new ButtonBuilder()
+        .setLabel("Download Source")
+        .setURL(downloadZipUrl)
+        .setStyle(ButtonStyle.Link);
+
     const selectRow = createSelectMenu(
         CATEGORY_SELECT_ID,
         "Select to view the commands",
@@ -185,6 +192,7 @@ export async function createInitialHelpMenu(client) {
 
     const buttonRow = new ActionRowBuilder().addComponents([
         bugReportButton,
+        downloadButton,
         supportButton,
         touchpointButton,
     ]);
