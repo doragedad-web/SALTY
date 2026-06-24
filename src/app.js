@@ -3,6 +3,7 @@ import { Client, Collection, GatewayIntentBits } from 'discord.js';
 import { REST } from '@discordjs/rest';
 import express from 'express';
 import cron from 'node-cron';
+import { GoogleGenAI } from '@google/genai';
 
 import config from './config/application.js';
 import { initializeDatabase } from './utils/database.js';
