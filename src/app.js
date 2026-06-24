@@ -42,6 +42,9 @@ class TitanBot extends Client {
     this.cooldowns = new Collection();
     this.db = null;
     this.rest = new REST({ version: '10' }).setToken(config.bot.token);
+    this.ai = new GoogleGenAI({
+  apiKey: process.env.GEMINI_API_KEY
+});
   }
 
   async start() {
